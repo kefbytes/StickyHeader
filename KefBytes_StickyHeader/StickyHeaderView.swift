@@ -14,8 +14,13 @@ enum PhoneHeight: Int {
 }
 
 protocol StickyHeaderDelegate {
-    func segmentedControlChanged(withIndex: Int)
     func searchStarted(withSearchString: String)
+}
+
+extension StickyHeaderDelegate {
+    func segmentedControlChanged(withIndex: Int) {
+        
+    }
 }
 
 class StickyHeaderView: UIView, UISearchBarDelegate {

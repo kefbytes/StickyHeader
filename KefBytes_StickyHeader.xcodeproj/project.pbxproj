@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE651EFC212CE319004717F7 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE651EFB212CE319004717F7 /* SecondVC.swift */; };
 		AEC902CE212C94D500F0FEA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC902CD212C94D500F0FEA7 /* AppDelegate.swift */; };
 		AEC902D0212C94D500F0FEA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC902CF212C94D500F0FEA7 /* ViewController.swift */; };
 		AEC902D3212C94D500F0FEA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEC902D1212C94D500F0FEA7 /* Main.storyboard */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AE651EFB212CE319004717F7 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		AEC902CA212C94D500F0FEA7 /* KefBytes_StickyHeader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KefBytes_StickyHeader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC902CD212C94D500F0FEA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEC902CF212C94D500F0FEA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 				AEC902D4212C94D500F0FEA7 /* Assets.xcassets */,
 				AEC902D6212C94D500F0FEA7 /* LaunchScreen.storyboard */,
 				AEC902D9212C94D500F0FEA7 /* Info.plist */,
-				AE651EFB212CE319004717F7 /* SecondVC.swift */,
 			);
 			path = KefBytes_StickyHeader;
 			sourceTree = "<group>";
@@ -145,7 +142,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AECD2ECF212CABEB00143352 /* LPLColors.swift in Sources */,
-				AE651EFC212CE319004717F7 /* SecondVC.swift in Sources */,
 				AEC902D0212C94D500F0FEA7 /* ViewController.swift in Sources */,
 				AEC902E0212C94FD00F0FEA7 /* StickyHeaderView.swift in Sources */,
 				AEC902CE212C94D500F0FEA7 /* AppDelegate.swift in Sources */,

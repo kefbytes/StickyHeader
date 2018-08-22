@@ -18,9 +18,7 @@ protocol StickyHeaderDelegate {
 }
 
 extension StickyHeaderDelegate {
-    func segmentedControlChanged(withIndex: Int) {
-        
-    }
+    func segmentedControlChanged(withIndex: Int) { }
 }
 
 class StickyHeaderView: UIView, UISearchBarDelegate {
@@ -29,10 +27,29 @@ class StickyHeaderView: UIView, UISearchBarDelegate {
     @IBOutlet var segmentedControl: UISegmentedControl?
     
     var stickyHeaderDelegate: StickyHeaderDelegate?
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func awakeFromNib() {
+        customizeSegmentedControl()
+        customizeSearchBar()
+    }
 
+    func customizeSegmentedControl() {
+        segmentedControl?.backgroundColor = .lPLLightGray
+    }
+    
+    func customizeSearchBar() {
+        searchBar?.backgroundImage = UIImage()
+    }
+    
     // MARK: - UI Calculations
-    func setYposition(height: CGFloat)  {
-        self.frame.origin.y = height + CGFloat(getHeightForPhone().rawValue)
+    func setYposition(offset: CGFloat)  {
+        if offset < 0 {
+            self.frame.origin.y = -offset
+        }
     }
     
     func getHeightForPhone() -> (PhoneHeight){

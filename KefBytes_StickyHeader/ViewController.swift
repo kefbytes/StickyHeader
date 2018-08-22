@@ -16,29 +16,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "KefBytes"
-        setupNavigationBar()
-        setupStickyHeader()
         stickyHeader.stickyHeaderDelegate = self
+        setUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        guard let navBarHeight = self.navigationController?.navigationBar.frame.size.height else {
-            return
-        }
-        stickyHeader.setYposition(height: navBarHeight)
+        super.viewDidAppear(animated)
+        stickyHeader.setYposition(offset: topDistance)
     }
     
     // MARK: - UI Setup
+    func setUI() {
+        tableView.backgroundColor = .clear
+        self.view.backgroundColor = .lPLLightGray
+        setupNavigationBar()
+    }
+    
     func setupNavigationBar() {
-        self.navigationController?.navigationBar.barTintColor = .lPLMediumGray
+        self.title = "Nav Bar Title"
+        self.navigationController?.navigationBar.barTintColor = .lPLLightGray
         self.navigationController?.navigationBar.tintColor = .lPLBlue1
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    func setupStickyHeader() {
-        stickyHeader.searchBar?.backgroundImage = UIImage()
     }
     
     // MARK: - TableView
@@ -51,17 +50,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = "\(indexPath.row)"
         return cell
     }
-
+    
     // MARK: - Scrolling
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         view.endEditing(true)
         if scrollView == tableView {
-            let contentOffset = scrollView.contentOffset.y
-            print("contentOffset: ", contentOffset)
-            guard let navBarHeight = self.navigationController?.navigationBar.frame.size.height else {
-                return
+            let offset = scrollView.contentOffset.y
+            self.stickyHeader.setYposition(offset: offset)
+        }
+    }
+    
+    public var topDistance: CGFloat{
+        get{
+            if self.navigationController != nil && !self.navigationController!.navigationBar.isTranslucent {
+                return 0
+            } else {
+                let barHeight = self.navigationController?.navigationBar.frame.height ?? 0
+                let statusBarHeight = UIApplication.shared.isStatusBarHidden ? CGFloat(0) : UIApplication.shared.statusBarFrame.height
+                return barHeight + statusBarHeight
             }
-            self.stickyHeader.setYposition(height: navBarHeight)
         }
     }
 }

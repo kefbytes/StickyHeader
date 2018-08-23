@@ -46,9 +46,13 @@ class StickyHeaderView: UIView, UISearchBarDelegate {
     }
     
     // MARK: - UI Calculations
-    func setYposition(offset: CGFloat)  {
-        if offset < 0 {
-            self.frame.origin.y = -offset
+    func setYposition(offset: CGFloat = 0, height: CGFloat = 0, translucent: Bool)  {
+        if translucent {
+            self.frame.origin.y = height + CGFloat(getHeightForPhone().rawValue)
+        } else {
+            if offset < 0 {
+                self.frame.origin.y = -offset
+            }
         }
     }
     

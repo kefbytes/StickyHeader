@@ -22,7 +22,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        stickyHeader.setYposition(offset: topDistance)
+        if self.navigationController != nil && !self.navigationController!.navigationBar.isTranslucent {
+            stickyHeader.setYposition(offset: topDistance, height: 0, translucent: false)
+        } else {
+            stickyHeader.setYposition(offset: topDistance, height: topDistance, translucent: true)
+        }
     }
     
     // MARK: - UI Setup
@@ -56,7 +60,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         view.endEditing(true)
         if scrollView == tableView {
             let offset = scrollView.contentOffset.y
-            self.stickyHeader.setYposition(offset: offset)
+            if self.navigationController != nil && !self.navigationController!.navigationBar.isTranslucent {
+                self.stickyHeader.setYposition(offset: offset, height: 0, translucent: false)
+            } else {
+                self.stickyHeader.setYposition(offset: 0, height: topDistance, translucent: true)
+            }
+            
         }
     }
     
@@ -65,9 +74,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if self.navigationController != nil && !self.navigationController!.navigationBar.isTranslucent {
                 return 0
             } else {
-                let barHeight = self.navigationController?.navigationBar.frame.height ?? 0
-                let statusBarHeight = UIApplication.shared.isStatusBarHidden ? CGFloat(0) : UIApplication.shared.statusBarFrame.height
-                return barHeight + statusBarHeight
+//                let barHeight = self.navigationController?.navigationBar.frame.height ?? 0
+//                let statusBarHeight = UIApplication.shared.isStatusBarHidden ? CGFloat(0) : UIApplication.shared.statusBarFrame.height
+//                return barHeight + statusBarHeight
+                if let height = self.navigationController?.navigationBar.frame.size.height {
+                    return height
+                } else {
+                    return 0
+                }
             }
         }
     }

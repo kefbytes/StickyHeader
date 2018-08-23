@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LAh-y6-ikh">
-                                <rect key="frame" x="0.0" y="85" width="375" height="518"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="507"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="DL3-Ea-Yiu"/>
@@ -27,7 +27,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rb2-h7-nP9" customClass="StickyHeaderView" customModule="KefBytes_StickyHeader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="kye-KM-wSW">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
@@ -37,7 +37,7 @@
                                         </connections>
                                     </searchBar>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dqV-SN-Za3">
-                                        <rect key="frame" x="0.0" y="57" width="375" height="29"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="29"/>
                                         <segments>
                                             <segment title="First"/>
                                             <segment title="Second"/>
@@ -50,8 +50,8 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="kye-KM-wSW" secondAttribute="trailing" id="Egv-oD-8eI"/>
                                     <constraint firstItem="kye-KM-wSW" firstAttribute="leading" secondItem="Rb2-h7-nP9" secondAttribute="leading" id="OD2-YH-Vnd"/>
-                                    <constraint firstItem="dqV-SN-Za3" firstAttribute="top" secondItem="kye-KM-wSW" secondAttribute="bottom" constant="1" id="Tah-os-loD"/>
-                                    <constraint firstAttribute="height" constant="85" id="dG5-6Z-L5S"/>
+                                    <constraint firstItem="dqV-SN-Za3" firstAttribute="top" secondItem="kye-KM-wSW" secondAttribute="bottom" id="Tah-os-loD"/>
+                                    <constraint firstAttribute="height" constant="96" id="dG5-6Z-L5S"/>
                                     <constraint firstAttribute="trailing" secondItem="dqV-SN-Za3" secondAttribute="trailing" id="gk9-4e-kDx"/>
                                     <constraint firstItem="kye-KM-wSW" firstAttribute="top" secondItem="Rb2-h7-nP9" secondAttribute="top" id="q2z-Ak-3hg"/>
                                     <constraint firstItem="dqV-SN-Za3" firstAttribute="leading" secondItem="Rb2-h7-nP9" secondAttribute="leading" id="qcu-L3-Cvc"/>
@@ -63,8 +63,8 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="LAh-y6-ikh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="85" id="EU3-PD-eIW"/>
-                            <constraint firstItem="Rb2-h7-nP9" firstAttribute="top" secondItem="LAh-y6-ikh" secondAttribute="top" constant="-85" id="Sp4-6q-jGM"/>
+                            <constraint firstItem="LAh-y6-ikh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="96" id="EU3-PD-eIW"/>
+                            <constraint firstItem="Rb2-h7-nP9" firstAttribute="top" secondItem="LAh-y6-ikh" secondAttribute="top" constant="-96" id="Sp4-6q-jGM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LAh-y6-ikh" secondAttribute="trailing" id="UL9-Pe-eyp"/>
                             <constraint firstItem="LAh-y6-ikh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cwb-AX-VAl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LAh-y6-ikh" secondAttribute="bottom" id="tyH-FL-Wdx"/>

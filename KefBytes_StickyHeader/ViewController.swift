@@ -13,19 +13,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var stickyHeader: StickyHeaderView!
     @IBOutlet weak var tableView: UITableView!
     
+    var translucentNavigationBar = false
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        if self.navigationController != nil && self.navigationController!.navigationBar.isTranslucent {
+            translucentNavigationBar = true
+        }
         stickyHeader.stickyHeaderDelegate = self
         setUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if self.navigationController != nil && !self.navigationController!.navigationBar.isTranslucent {
-            stickyHeader.setYposition(offset: topDistance, height: 0, translucent: false)
-        } else {
+        if translucentNavigationBar {
             stickyHeader.setYposition(offset: topDistance, height: topDistance, translucent: true)
+        } else {
+            stickyHeader.setYposition(offset: topDistance, height: 0, translucent: false)
         }
     }
     
@@ -60,10 +65,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         view.endEditing(true)
         if scrollView == tableView {
             let offset = scrollView.contentOffset.y
-            if self.navigationController != nil && !self.navigationController!.navigationBar.isTranslucent {
-                self.stickyHeader.setYposition(offset: offset, height: 0, translucent: false)
-            } else {
+            if translucentNavigationBar {
                 self.stickyHeader.setYposition(offset: 0, height: topDistance, translucent: true)
+            } else {
+                self.stickyHeader.setYposition(offset: offset, height: 0, translucent: false)
             }
             
         }
@@ -71,17 +76,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     public var topDistance: CGFloat{
         get{
-            if self.navigationController != nil && !self.navigationController!.navigationBar.isTranslucent {
-                return 0
-            } else {
-//                let barHeight = self.navigationController?.navigationBar.frame.height ?? 0
-//                let statusBarHeight = UIApplication.shared.isStatusBarHidden ? CGFloat(0) : UIApplication.shared.statusBarFrame.height
-//                return barHeight + statusBarHeight
+            if translucentNavigationBar {
                 if let height = self.navigationController?.navigationBar.frame.size.height {
                     return height
                 } else {
                     return 0
                 }
+            } else {
+                return 0
             }
         }
     }

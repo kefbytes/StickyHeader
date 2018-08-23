@@ -14,7 +14,7 @@
 		AEC902D5212C94D500F0FEA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEC902D4212C94D500F0FEA7 /* Assets.xcassets */; };
 		AEC902D8212C94D500F0FEA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEC902D6212C94D500F0FEA7 /* LaunchScreen.storyboard */; };
 		AEC902E0212C94FD00F0FEA7 /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC902DF212C94FD00F0FEA7 /* StickyHeaderView.swift */; };
-		AECD2ECF212CABEB00143352 /* LPLColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECD2ECE212CABEA00143352 /* LPLColors.swift */; };
+		AECD2ECF212CABEB00143352 /* KefColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECD2ECE212CABEA00143352 /* KefColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		AEC902D7212C94D500F0FEA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEC902D9212C94D500F0FEA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEC902DF212C94FD00F0FEA7 /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
-		AECD2ECE212CABEA00143352 /* LPLColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPLColors.swift; sourceTree = "<group>"; };
+		AECD2ECE212CABEA00143352 /* KefColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KefColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 		AEC902CC212C94D500F0FEA7 /* KefBytes_StickyHeader */ = {
 			isa = PBXGroup;
 			children = (
-				AECD2ECE212CABEA00143352 /* LPLColors.swift */,
+				AECD2ECE212CABEA00143352 /* KefColors.swift */,
 				AEC902CD212C94D500F0FEA7 /* AppDelegate.swift */,
 				AEC902CF212C94D500F0FEA7 /* ViewController.swift */,
 				AEC902DF212C94FD00F0FEA7 /* StickyHeaderView.swift */,
@@ -144,7 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AECD2ECF212CABEB00143352 /* LPLColors.swift in Sources */,
+				AECD2ECF212CABEB00143352 /* KefColors.swift in Sources */,
 				AEB21E35212E4EB400FF057F /* SecondVC.swift in Sources */,
 				AEC902D0212C94D500F0FEA7 /* ViewController.swift in Sources */,
 				AEC902E0212C94FD00F0FEA7 /* StickyHeaderView.swift in Sources */,

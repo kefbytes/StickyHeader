@@ -37,14 +37,14 @@ class SecondVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     // MARK: - UI Setup
     func setUI() {
         tableView.backgroundColor = .clear
-        self.view.backgroundColor = .lPLLightGray
+        self.view.backgroundColor = .kefLightGray
         setupNavigationBar()
     }
     
     func setupNavigationBar() {
-        self.title = "Nav Bar Title"
-        self.navigationController?.navigationBar.barTintColor = .lPLLightGray
-        self.navigationController?.navigationBar.tintColor = .lPLBlue1
+        self.title = "View 2"
+        self.navigationController?.navigationBar.barTintColor = .kefLightGray
+        self.navigationController?.navigationBar.tintColor = .kefBlue1
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }

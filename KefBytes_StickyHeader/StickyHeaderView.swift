@@ -34,7 +34,9 @@ class StickyHeaderView: UIView, UISearchBarDelegate {
     }
     
     override func awakeFromNib() {
-        customizeSegmentedControl()
+        if let _ = segmentedControl {
+            customizeSegmentedControl()
+        }
         customizeSearchBar()
     }
 

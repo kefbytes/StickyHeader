@@ -1,15 +1,15 @@
 //
-//  ViewController.swift
+//  SecondVC.swift
 //  KefBytes_StickyHeader
 //
-//  Created by Kent Franks on 8/21/18.
+//  Created by Kent Franks on 8/22/18.
 //  Copyright © 2018 Kent Franks. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
-
+class SecondVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+    
     @IBOutlet weak var stickyHeader: StickyHeaderView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -42,7 +42,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func setupNavigationBar() {
-        self.title = "View 1"
+        self.title = "Nav Bar Title"
         self.navigationController?.navigationBar.barTintColor = .lPLLightGray
         self.navigationController?.navigationBar.tintColor = .lPLBlue1
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -89,16 +89,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 }
 
-extension ViewController: StickyHeaderDelegate {
-    
-    func segmentedControlChanged(withIndex: Int) {
-        print("Index = \(withIndex)")
-    }
+extension SecondVC: StickyHeaderDelegate {
     
     func searchStarted(withSearchString: String) {
         print("Search string is = \(withSearchString)")
     }
-
+    
 }
-
-
